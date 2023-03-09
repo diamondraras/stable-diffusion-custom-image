@@ -1,0 +1,20 @@
+version: "3.1"
+
+services:
+  stable_diffusion:
+    build: 
+      context: .
+      args:
+        MODEL_URL: https://memoiremasterbucket.s3.eu-west-3.amazonaws.com/sd-v1-4.ckpt
+        TEXT_PROMPT: "a photograph of an astronaut riding a horse"
+    ports:
+      - 9999:9999
+
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

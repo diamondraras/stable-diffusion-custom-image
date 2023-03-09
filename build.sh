@@ -1,0 +1,1 @@
+docker build --build-arg MODEL_URL=http://192.168.88.12:8000/sd-v1-4.ckpt -t diamondra/stable-diffusion .
