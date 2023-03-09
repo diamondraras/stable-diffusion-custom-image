@@ -1,0 +1,1 @@
+docker run --gpus all -p 3000:3000 diamondra/stable-diffusion  
